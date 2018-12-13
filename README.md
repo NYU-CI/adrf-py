@@ -1,2 +1,2 @@
-# adrf_py
+# adrf-py
 ADRF Client library

@@ -7,7 +7,7 @@ except:
       long_description = ''
 
 setuptools.setup(name='adrf',
-      version='0.1.2',
+      version='0.1.3',
       description='ADRF Python Client',
       url='https://github.com/NYU-Chicago-data-facility/adrf_py',
       author='Daniel Castellani',

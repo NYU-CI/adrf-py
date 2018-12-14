@@ -18,9 +18,9 @@ class Dataset(remote_models.RemoteModel):
 
     @property
     def table_names(self):
-        return [t.name for t in self.__tables()]
+        return [t.name for t in self.tables()]
 
-    def __tables(self):
+    def tables(self):
         response = requests.get(url=Table.remote_endpoint + '?dataset=' + self.id)
         if response.status_code == 200:
             tables = []
@@ -31,7 +31,7 @@ class Dataset(remote_models.RemoteModel):
             raise remote_models.RemoteObjectNotFound('Error getting tables for {0} identified by {1}.'.format(self.model, self.dfrn))
 
     def table(self, table_name):
-        for t in self.__tables():
+        for t in self.tables():
             if t.name == table_name:
                 return t
         return None

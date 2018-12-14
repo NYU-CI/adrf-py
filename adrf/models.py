@@ -1,13 +1,19 @@
 from . import remote_models
 import requests
 import json
-
+import pandas as pd
 
 class Table(remote_models.RemoteModel):
     remote_host = "http://localhost:8000"
     remote_endpoint = remote_host + "/api/v1/datatables"
     remote_id_field = 'name'
     model = 'Table'
+
+    @property
+    def data_frame(self):
+        # TODO: get real path
+        # TODO: cache data before loading?
+        return pd.read_csv('https://data.cityofnewyork.us/resource/qiz3-axqb.csv')
 
 
 class Dataset(remote_models.RemoteModel):

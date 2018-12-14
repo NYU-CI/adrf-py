@@ -1,4 +1,4 @@
 # adrf-py
 ADRF Client library
 
-Check the demo [Jupyter Notebook](docs/demo.ipynb)
+Check the demo [Jupyter Notebook](docs/example.ipynb)
